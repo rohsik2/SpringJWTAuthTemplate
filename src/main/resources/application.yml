@@ -1,0 +1,13 @@
+
+spring:
+  datasource:
+    url : jdbc:postgresql://localhost:5432/template1
+    username : postgres
+
+  jpa:
+    hibernate:
+      ddl-auto : create
+    properties:
+      hibernate:
+        format_sql : true
+    show-sql : false

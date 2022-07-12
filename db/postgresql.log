@@ -1,0 +1,37 @@
+2022-07-01 10:46:50.724 KST [55594] LOG:  starting PostgreSQL 14.2 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-07-01 10:46:50.725 KST [55594] LOG:  listening on IPv6 address "::1", port 5432
+2022-07-01 10:46:50.725 KST [55594] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-07-01 10:46:50.726 KST [55594] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-07-01 10:46:50.728 KST [55595] LOG:  database system was shut down at 2022-07-01 10:46:50 KST
+2022-07-01 10:46:50.730 KST [55594] LOG:  database system is ready to accept connections
+2022-07-01 10:54:48.849 KST [56910] FATAL:  database "auth" does not exist
+2022-07-01 10:54:50.055 KST [56911] FATAL:  database "auth" does not exist
+2022-07-01 10:55:00.385 KST [56944] FATAL:  database "auth" does not exist
+2022-07-01 10:55:01.558 KST [56962] FATAL:  database "auth" does not exist
+2022-07-01 11:02:41.349 KST [59509] FATAL:  database "auth" does not exist
+2022-07-11 12:47:43.828 KST [55594] LOG:  received fast shutdown request
+2022-07-11 12:47:43.829 KST [55594] LOG:  aborting any active transactions
+2022-07-11 12:47:43.830 KST [55594] LOG:  background worker "logical replication launcher" (PID 55601) exited with exit code 1
+2022-07-11 12:47:43.831 KST [55596] LOG:  shutting down
+2022-07-11 12:47:43.842 KST [55594] LOG:  database system is shut down
+2022-07-11 12:47:47.181 KST [76417] LOG:  starting PostgreSQL 14.2 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-07-11 12:47:47.183 KST [76417] LOG:  listening on IPv6 address "::1", port 5432
+2022-07-11 12:47:47.183 KST [76417] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-07-11 12:47:47.184 KST [76417] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-07-11 12:47:47.189 KST [76418] LOG:  database system was shut down at 2022-07-11 12:47:43 KST
+2022-07-11 12:47:47.193 KST [76417] LOG:  database system is ready to accept connections
+2022-07-11 12:50:47.215 KST [76955] FATAL:  database "template0" is not currently accepting connections
+2022-07-11 12:53:02.992 KST [76975] ERROR:  syntax error at or near "create" at character 8
+2022-07-11 12:53:02.992 KST [76975] STATEMENT:  create
+	create user rohsik2 password 'rohsik123' superuser;
+2022-07-11 12:53:06.154 KST [76975] ERROR:  syntax error at or near "create" at character 8
+2022-07-11 12:53:06.154 KST [76975] STATEMENT:  create
+	create user rohsik2 password 'rohsik123' superuser;
+2022-07-11 12:54:35.004 KST [76975] ERROR:  syntax error at or near "/" at character 1
+2022-07-11 12:54:35.004 KST [76975] STATEMENT:  /du
+	SELECT * FROM template1;
+2022-07-11 12:54:37.817 KST [76975] ERROR:  relation "template1" does not exist at character 15
+2022-07-11 12:54:37.817 KST [76975] STATEMENT:  SELECT * FROM template1;
+2022-07-11 12:54:52.295 KST [76975] ERROR:  syntax error at or near "DESC" at character 1
+2022-07-11 12:54:52.295 KST [76975] STATEMENT:  DESC
+	;
