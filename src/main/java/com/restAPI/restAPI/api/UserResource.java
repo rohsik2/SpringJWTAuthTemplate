@@ -59,6 +59,9 @@ public class UserResource {
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/user").toUriString());
         return ResponseEntity.created(uri).body(appUserService.saveUser(user));
     }
+    //TODO : Making Register Function
+    //TODO : Making User Change Function
+    //직접 Request Body로 Entity를 요청해도 되나?
 
     @PostMapping("/role")
     public ResponseEntity<Role> saveRole(@RequestBody Role role){

@@ -35,3 +35,53 @@
 2022-07-11 12:54:52.295 KST [76975] ERROR:  syntax error at or near "DESC" at character 1
 2022-07-11 12:54:52.295 KST [76975] STATEMENT:  DESC
 	;
+2022-07-13 16:10:41.395 KST [44647] ERROR:  duplicate key value violates unique constraint "uk_ca699byqpy39i3fkohu5ya69m"
+2022-07-13 16:10:41.395 KST [44647] DETAIL:  Key (name)=(rohsikbak) already exists.
+2022-07-13 16:10:41.395 KST [44647] STATEMENT:  insert into app_user (name, password, username, id) values ($1, $2, $3, $4)
+2022-07-13 16:11:51.401 KST [44791] ERROR:  duplicate key value violates unique constraint "uk_ca699byqpy39i3fkohu5ya69m"
+2022-07-13 16:11:51.401 KST [44791] DETAIL:  Key (name)=(rohsikbak) already exists.
+2022-07-13 16:11:51.401 KST [44791] STATEMENT:  insert into app_user (name, password, username, id) values ($1, $2, $3, $4)
+2022-07-13 16:22:10.191 KST [45887] ERROR:  duplicate key value violates unique constraint "uk_8sewwnpamngi6b1dwaa88askk"
+2022-07-13 16:22:10.191 KST [45887] DETAIL:  Key (name)=(ROLE_ADMIN) already exists.
+2022-07-13 16:22:10.191 KST [45887] STATEMENT:  insert into role (name, id) values ($1, $2)
+2022-07-13 16:22:10.332 KST [45887] ERROR:  duplicate key value violates unique constraint "uk_ca699byqpy39i3fkohu5ya69m"
+2022-07-13 16:22:10.332 KST [45887] DETAIL:  Key (name)=(rohsikbak) already exists.
+2022-07-13 16:22:10.332 KST [45887] STATEMENT:  insert into app_user (name, password, username, id) values ($1, $2, $3, $4)
+2022-07-13 16:22:10.461 KST [45887] ERROR:  duplicate key value violates unique constraint "uk_ca699byqpy39i3fkohu5ya69m"
+2022-07-13 16:22:10.461 KST [45887] DETAIL:  Key (name)=(rohsikbak) already exists.
+2022-07-13 16:22:10.461 KST [45887] STATEMENT:  insert into app_user (name, password, username, id) values ($1, $2, $3, $4)
+2022-07-13 16:22:10.590 KST [45887] ERROR:  duplicate key value violates unique constraint "uk_ca699byqpy39i3fkohu5ya69m"
+2022-07-13 16:22:10.590 KST [45887] DETAIL:  Key (name)=(rohsikbak) already exists.
+2022-07-13 16:22:10.590 KST [45887] STATEMENT:  insert into app_user (name, password, username, id) values ($1, $2, $3, $4)
+2022-07-13 16:22:10.719 KST [45887] ERROR:  duplicate key value violates unique constraint "uk_ca699byqpy39i3fkohu5ya69m"
+2022-07-13 16:22:10.719 KST [45887] DETAIL:  Key (name)=(rohsikbak) already exists.
+2022-07-13 16:22:10.719 KST [45887] STATEMENT:  insert into app_user (name, password, username, id) values ($1, $2, $3, $4)
+2022-07-13 16:22:10.846 KST [45887] ERROR:  duplicate key value violates unique constraint "uk_ca699byqpy39i3fkohu5ya69m"
+2022-07-13 16:22:10.846 KST [45887] DETAIL:  Key (name)=(rohsikbak) already exists.
+2022-07-13 16:22:10.846 KST [45887] STATEMENT:  insert into app_user (name, password, username, id) values ($1, $2, $3, $4)
+2022-07-13 16:25:37.038 KST [46281] ERROR:  duplicate key value violates unique constraint "uk_8sewwnpamngi6b1dwaa88askk"
+2022-07-13 16:25:37.038 KST [46281] DETAIL:  Key (name)=(ROLE_ADMIN) already exists.
+2022-07-13 16:25:37.038 KST [46281] STATEMENT:  insert into role (name, id) values ($1, $2)
+2022-07-13 16:27:42.895 KST [46525] ERROR:  duplicate key value violates unique constraint "uk_8sewwnpamngi6b1dwaa88askk"
+2022-07-13 16:27:42.895 KST [46525] DETAIL:  Key (name)=(ROLE_ADMIN) already exists.
+2022-07-13 16:27:42.895 KST [46525] STATEMENT:  insert into role (name, id) values ($1, $2)
+2022-07-13 16:29:23.465 KST [46729] ERROR:  duplicate key value violates unique constraint "uk_8sewwnpamngi6b1dwaa88askk"
+2022-07-13 16:29:23.465 KST [46729] DETAIL:  Key (name)=(ROLE_ADMIN) already exists.
+2022-07-13 16:29:23.465 KST [46729] STATEMENT:  insert into role (name, id) values ($1, $2)
+2022-07-13 16:30:27.653 KST [46866] ERROR:  duplicate key value violates unique constraint "uk_8sewwnpamngi6b1dwaa88askk"
+2022-07-13 16:30:27.653 KST [46866] DETAIL:  Key (name)=(ROLE_ADMIN) already exists.
+2022-07-13 16:30:27.653 KST [46866] STATEMENT:  insert into role (name, id) values ($1, $2)
+2022-07-13 16:31:47.484 KST [47023] ERROR:  duplicate key value violates unique constraint "uk_8sewwnpamngi6b1dwaa88askk"
+2022-07-13 16:31:47.484 KST [47023] DETAIL:  Key (name)=(ROLE_ADMIN) already exists.
+2022-07-13 16:31:47.484 KST [47023] STATEMENT:  insert into role (name, id) values ($1, $2)
+2022-07-13 16:31:47.491 KST [47023] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2022-07-13 16:31:47.491 KST [47023] STATEMENT:  insert into app_user (name, password, username, id) values ($1, $2, $3, $4)
+2022-07-13 16:32:41.624 KST [47134] ERROR:  duplicate key value violates unique constraint "uk_8sewwnpamngi6b1dwaa88askk"
+2022-07-13 16:32:41.624 KST [47134] DETAIL:  Key (name)=(ROLE_ADMIN) already exists.
+2022-07-13 16:32:41.624 KST [47134] STATEMENT:  insert into role (name, id) values ($1, $2)
+2022-07-13 16:40:02.951 KST [47943] ERROR:  duplicate key value violates unique constraint "uk_8sewwnpamngi6b1dwaa88askk"
+2022-07-13 16:40:02.951 KST [47943] DETAIL:  Key (name)=(ROLE_ADMIN) already exists.
+2022-07-13 16:40:02.951 KST [47943] STATEMENT:  insert into role (name, id) values ($1, $2)
+2022-07-13 16:43:11.325 KST [48287] ERROR:  duplicate key value violates unique constraint "uk_8sewwnpamngi6b1dwaa88askk"
+2022-07-13 16:43:11.325 KST [48287] DETAIL:  Key (name)=(ROLE_ADMIN) already exists.
+2022-07-13 16:43:11.325 KST [48287] STATEMENT:  insert into role (name, id) values ($1, $2)
