@@ -45,7 +45,10 @@ public class AppUserServiceImpl implements AppUserService, UserDetailsService {
     public AppUser saveUser(AppUser user) {
         log.info("Saving new user {} to the db", user.getName());
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        return userRepo.save(user);
+        userRepo.save(user);
+        addRoleToUser(user.getUsername(), "ROLE_USER");
+        log.info("Role of user {}", user.getRoles().toString());
+        return user;
     }
 
     @Override

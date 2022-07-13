@@ -13,6 +13,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -24,10 +25,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URI;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.springframework.data.mapping.callback.ReactiveEntityCallbacks.create;
@@ -55,9 +53,19 @@ public class UserResource {
     }
 
     @PostMapping("/user")
-    public ResponseEntity<AppUser> saveUser(@RequestBody AppUser user){
+    public ResponseEntity<?> saveUser(AppUserForm userForm){
+        log.info("Save user {} request reached", userForm.getName());
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/user").toUriString());
-        return ResponseEntity.created(uri).body(appUserService.saveUser(user));
+        try {
+            AppUser newUser = new AppUser(null, userForm.getName(), userForm.getUsername(), userForm.getPassword(), new ArrayList<>());
+            appUserService.saveUser(newUser);
+        }
+        catch(Exception e){
+            if(e.getClass() == ConstraintViolationException.class)
+                return ResponseEntity.badRequest().body("Username already Exists");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+        return ResponseEntity.created(uri).build();
     }
     //TODO : Making Register Function
     //TODO : Making User Change Function
@@ -84,7 +92,7 @@ public class UserResource {
                 String refreshToken = accessRequestForm.getRefreshToken();
                 String username = Utility.getUsernameFromToken(refreshToken);
                 String issuer = Utility.getIssuerFromToken(refreshToken);
-                if(username == null || issuer == null){
+                if(username == null || issuer == null || !username.equals(accessRequestForm.getUsername())){
                     return ResponseEntity.badRequest().body("Wrong Token (maybe expired)");
                 }
 
@@ -127,4 +135,11 @@ class AccessRequestForm{
 class RoleToUserForm{
     private String username;
     private String roleName;
+}
+
+@Data
+class AppUserForm{
+    private String name;
+    private String username;
+    private String password;
 }
