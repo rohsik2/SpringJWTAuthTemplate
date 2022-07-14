@@ -44,6 +44,7 @@ admin을 위한 전용 method입니다. 모든 user의 정보를 반환합니다
 
 ### POST : /api/user
 새로운 user를 등록합니다.
+
 Example Request
 ~~~
 {
@@ -53,11 +54,31 @@ Example Request
 }
 ~~~
 Example Response
+
+성공시 201 Created, 이외의 경우 에러를 리턴합니다.
 ~~~
 {
-
+    "username"   : { id of user },
+    "detail_url" : { url of user detail },
 }
 ~~~
 
 ### GET : /api/user/{username}
+Example Request
 
+Request Header에 다음 정보가 들어있어야 합니다.
+~~~
+{
+    "AUTHORIZATION" : "bearer { user access token }"
+}
+~~~
+
+Example Response
+~~~
+{
+    "id"       : { given id of user },
+    "username" : { id of user },
+    "roles"    : { list type of user's auth },
+    "name"     : { name of user },
+}
+~~~
