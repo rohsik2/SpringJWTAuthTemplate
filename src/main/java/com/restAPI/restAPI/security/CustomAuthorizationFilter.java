@@ -1,4 +1,4 @@
-package com.restAPI.restAPI.filter;
+package com.restAPI.restAPI.security.filter;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
@@ -7,9 +7,7 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.restAPI.restAPI.utility.Utility;
 import lombok.extern.slf4j.Slf4j;
-import org.json.HTTP;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -34,8 +32,8 @@ import static java.util.Arrays.stream;
 public class CustomAuthorizationFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        log.info("Request from {}", request.getServletPath());
-        log.info("Request method is {}", request.getMethod());
+        log.debug("Request from {}", request.getServletPath());
+        log.debug("Request method is {}", request.getMethod());
         if (request.getServletPath().equals("/api/oauth/access") || (request.getServletPath().equals("/api/user") && request.getMethod().equals("POST"))) {
             filterChain.doFilter(request, response);
         }

@@ -1,4 +1,4 @@
-package com.restAPI.restAPI.domain;
+package com.restAPI.restAPI.user.domain;
 
 
 import lombok.AllArgsConstructor;

@@ -1,9 +1,9 @@
-package com.restAPI.restAPI.service;
+package com.restAPI.restAPI.user.service;
 
-import com.restAPI.restAPI.domain.AppUser;
-import com.restAPI.restAPI.domain.Role;
-import com.restAPI.restAPI.repository.AppUserRepo;
-import com.restAPI.restAPI.repository.RoleRepo;
+import com.restAPI.restAPI.user.domain.AppUser;
+import com.restAPI.restAPI.user.domain.Role;
+import com.restAPI.restAPI.user.repository.AppUserRepo;
+import com.restAPI.restAPI.user.repository.RoleRepo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

@@ -1,4 +1,4 @@
-package com.restAPI.restAPI.filter;
+package com.restAPI.restAPI.security.filter;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;

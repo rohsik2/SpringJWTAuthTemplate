@@ -1,10 +1,10 @@
 package com.restAPI.restAPI.service;
 
-import com.restAPI.restAPI.domain.AppUser;
-import com.restAPI.restAPI.domain.Role;
-import com.restAPI.restAPI.repository.AppUserRepo;
-import com.restAPI.restAPI.repository.RoleRepo;
-import org.junit.jupiter.api.BeforeAll;
+import com.restAPI.restAPI.user.domain.AppUser;
+import com.restAPI.restAPI.user.domain.Role;
+import com.restAPI.restAPI.user.repository.AppUserRepo;
+import com.restAPI.restAPI.user.repository.RoleRepo;
+import com.restAPI.restAPI.user.service.AppUserServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

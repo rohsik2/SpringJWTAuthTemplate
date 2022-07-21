@@ -1,7 +1,9 @@
-package com.restAPI.restAPI.security;
+package com.restAPI.restAPI.config;
 
-import com.restAPI.restAPI.filter.CustomAuthenticationFilter;
-import com.restAPI.restAPI.filter.CustomAuthorizationFilter;
+import com.restAPI.restAPI.security.CustomAuthenticationFilter;
+import com.restAPI.restAPI.security.CustomAuthorizationFilter;
+import com.restAPI.restAPI.security.filter.CustomAuthenticationFilter;
+import com.restAPI.restAPI.security.filter.CustomAuthorizationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -51,6 +53,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/user/**").hasAnyAuthority("ROLE_USER");
         http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/user/**").hasAnyAuthority("ROLE_USER");
         http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/users").hasAnyAuthority("ROLE_ADMIN");
+        http.authorizeRequests().antMatchers("/drive/**").permitAll();
         http.authorizeRequests().anyRequest().authenticated();
         http.addFilter(customAuthenticationFilter);
         http.addFilterBefore(new CustomAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);

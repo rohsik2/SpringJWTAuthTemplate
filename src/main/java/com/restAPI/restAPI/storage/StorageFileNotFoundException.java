@@ -1,4 +1,4 @@
-package com.example.uploadingfiles.storage;
+package com.restAPI.restAPI.storage;
 
 public class StorageFileNotFoundException extends StorageException {
 

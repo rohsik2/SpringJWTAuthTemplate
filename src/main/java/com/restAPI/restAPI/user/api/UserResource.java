@@ -1,13 +1,9 @@
-package com.restAPI.restAPI.api;
+package com.restAPI.restAPI.user.api;
 
 import com.auth0.jwt.JWT;
-import com.auth0.jwt.JWTVerifier;
-import com.auth0.jwt.algorithms.Algorithm;
-import com.auth0.jwt.interfaces.DecodedJWT;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.restAPI.restAPI.domain.AppUser;
-import com.restAPI.restAPI.domain.Role;
-import com.restAPI.restAPI.service.AppUserService;
+import com.restAPI.restAPI.user.domain.AppUser;
+import com.restAPI.restAPI.user.domain.Role;
+import com.restAPI.restAPI.user.service.AppUserService;
 import com.restAPI.restAPI.utility.Utility;
 import io.swagger.annotations.ApiOperation;
 import lombok.Data;
@@ -16,13 +12,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URI;
 import java.util.*;

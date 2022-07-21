@@ -1,6 +1,7 @@
-package com.example.uploadingfiles.storage;
+package com.restAPI.restAPI.storage;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 
 @ConfigurationProperties("storage")
 public class StorageProperties {

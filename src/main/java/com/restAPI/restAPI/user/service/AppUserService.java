@@ -1,7 +1,7 @@
-package com.restAPI.restAPI.service;
+package com.restAPI.restAPI.user.service;
 
-import com.restAPI.restAPI.domain.AppUser;
-import com.restAPI.restAPI.domain.Role;
+import com.restAPI.restAPI.user.domain.AppUser;
+import com.restAPI.restAPI.user.domain.Role;
 
 import java.util.List;
 

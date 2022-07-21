@@ -1,4 +1,4 @@
-package com.restAPI.restAPI.service;
+package com.restAPI.restAPI.storage;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,8 +9,6 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.stream.Stream;
 
-import com.restAPI.restAPI.storage.StorageException;
-import com.restAPI.restAPI.storage.StorageProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,7 +74,7 @@ public class FileSystemStorageService implements StorageService {
     }
 
     @Override
-    public Resource loadAsResource(String filename) throws StorageFileNotFoundException {
+    public Resource loadAsResource(String filename) throws StorageException.StorageFileNotFoundException {
         try {
             Path file = load(filename);
             Resource resource = new UrlResource(file.toUri());
@@ -84,11 +82,11 @@ public class FileSystemStorageService implements StorageService {
                 return resource;
             }
             else {
-                throw new StorageFileNotFoundException("Could not read file: " + filename);
+                throw new StorageException.StorageFileNotFoundException("Could not read file: " + filename);
             }
         }
         catch (MalformedURLException e) {
-            throw new StorageFileNotFoundException("Could not read file: " + filename);
+            throw new StorageException.StorageFileNotFoundException("Could not read file: " + filename);
         }
     }
 
